@@ -7,6 +7,7 @@ import firebase from '../../firebase';
 
 const Messages = (props) => {
   const messagesRef = firebase.database().ref('messages');
+  const privateMessagesRef = firebase.database().ref('privateMessages');
   const [messagesList, setMessagesList] = React.useState([]);
   const [messagesLoading, setMessagesLoading] = React.useState(true);
   const [uniquesUsersNo, setUniquesUsersNo] = React.useState(0);
@@ -22,7 +23,8 @@ const Messages = (props) => {
 
   const getMessages = (channelId) => {
     let loadedMessages = [];
-    messagesRef.child(channelId).on('child_added', (snap) => {
+    const ref = getMessagesRef();
+    ref.child(channelId).on('child_added', (snap) => {
       loadedMessages.push(snap.val());
       setMessagesList(loadedMessages);
       setMessagesLoading(false);
@@ -30,7 +32,15 @@ const Messages = (props) => {
     });
   };
 
-  const displayChannelName = (channel) => (channel ? `#${channel.name}` : '');
+  const getMessagesRef = () => {
+    return props.privateChannel ? privateMessagesRef : messagesRef;
+  };
+
+  const displayChannelName = (channel) => {
+    return channel
+      ? `${props.isPrivateChannel ? '@' : '#'}${channel.name}`
+      : '';
+  };
   const displayUniqueUsers = (messages) => {
     const uniqueUsers = messages.reduce((usersInChannel, message) => {
       if (!usersInChannel.includes(message.user.name)) {
@@ -71,6 +81,7 @@ const Messages = (props) => {
             uniquesUsersNo={uniquesUsersNo}
             searchTerm={searchTerm}
             handleSearchChange={handleSearchChange}
+            isPrivateChannel={props.isPrivateChannel}
           />
           <Segment>
             <Comment.Group className="messages">
@@ -92,6 +103,8 @@ const Messages = (props) => {
             currentChannel={props.currentChannel}
             currentUser={props.currentUser}
             updateMessages={getMessages}
+            isPrivateChannel={props.isPrivateChannel}
+            getMessagesRef={getMessagesRef}
           />
         </React.Fragment>
       ) : (

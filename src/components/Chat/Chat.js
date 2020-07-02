@@ -20,6 +20,7 @@ const Chat = (props) => {
           key={_.get(props.channel, 'currentChannel.id')}
           currentChannel={_.get(props.channel, 'currentChannel')}
           currentUser={_.get(props.user, 'currentUser')}
+          isPrivateChannel={_.get(props.channel, 'isPrivateChannel')}
         />
       </Grid.Column>
       <Grid.Column width={4}>
