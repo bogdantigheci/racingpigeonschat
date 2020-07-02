@@ -6,9 +6,25 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "emoji-mart": "^3.0.0",
+    "firebase": "^7.15.2",
+    "lodash": "^4.17.15",
+    "md5": "^2.2.1",
+    "moment": "^2.27.0",
     "react": "^16.13.1",
+    "react-avatar-editor": "^11.0.9",
+    "react-color": "^2.18.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.88.2",
+    "uuid": "^8.1.0",
+    "uuidv4": "^6.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -30,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "0.0.0-7f28234f8"
   }
 }
