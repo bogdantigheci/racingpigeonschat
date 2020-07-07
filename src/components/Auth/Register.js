@@ -35,7 +35,6 @@ const Register = () => {
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then((createdUser) => {
-        console.log(createdUser);
         createdUser.user
           .updateProfile({
             displayName: username,
@@ -45,7 +44,7 @@ const Register = () => {
           })
           .then(() => {
             saveUser(createdUser).then(() => {
-              console.log('user saved');
+              console.log('');
             });
             setLoading(false);
           })

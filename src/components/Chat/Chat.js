@@ -9,10 +9,20 @@ import _ from 'lodash';
 
 const Chat = (props) => {
   return (
-    <Grid columns="equal" className="layout" style={{ background: '#eee' }}>
-      <ColorPanel />
+    <Grid
+      columns="equal"
+      className="layout"
+      style={{ background: props.colors.secondaryColor }}
+    >
+      <ColorPanel
+        key={_.get(props.user, 'currentUser.name')}
+        currentUser={_.get(props.user, 'currentUser')}
+        primaryColor={_.get(props.colors, 'primaryColor')}
+        secondaryColor={_.get(props.colors, 'secondaryColor')}
+      />
       <SidePanel
         key={_.get(props.user, 'currentUser.uid')}
+        primaryColor={_.get(props.colors, 'primaryColor')}
         currentUser={_.get(props.user, 'currentUser')}
       />
       <Grid.Column style={{ marginLeft: 320 }}>
@@ -24,7 +34,12 @@ const Chat = (props) => {
         />
       </Grid.Column>
       <Grid.Column width={4}>
-        <MetaPanel />
+        <MetaPanel
+          currentChannel={_.get(props.channel, 'currentChannel')}
+          key={_.get(props.channel, 'currentChannel.name')}
+          isPrivateChannel={_.get(props.channel, 'isPrivateChannel')}
+          userPosts={_.get(props.channel, 'userPosts')}
+        />
       </Grid.Column>
     </Grid>
   );
@@ -33,6 +48,7 @@ const Chat = (props) => {
 const mapStateToProps = (state) => ({
   user: state.user,
   channel: state.channel,
+  colors: state.colors,
 });
 
 export default connect(mapStateToProps)(Chat);

@@ -3,6 +3,7 @@ import { Menu } from 'semantic-ui-react';
 import UserPanel from './UserPanel';
 import Channels from './Channels';
 import DirectMessages from './DirectMessages';
+import FavoriteChannel from './FavoriteChannel';
 
 const SidePanel = (props) => {
   return (
@@ -11,9 +12,13 @@ const SidePanel = (props) => {
       inverted
       fixed="left"
       vertical
-      style={{ background: 'blue', fontSize: '1.2rem' }}
+      style={{ background: props.primaryColor, fontSize: '1.2rem' }}
     >
-      <UserPanel currentUser={props.currentUser} />
+      <UserPanel
+        currentUser={props.currentUser}
+        primaryColor={props.primaryColor}
+      />
+      <FavoriteChannel currentUser={props.currentUser} />
       <Channels currentUser={props.currentUser} />
       <DirectMessages currentUser={props.currentUser} />
     </Menu>

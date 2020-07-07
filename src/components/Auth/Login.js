@@ -32,7 +32,7 @@ const Login = (props) => {
         setLoading(false);
       })
       .catch((err) => {
-        setErrors(err);
+        setErrors(errors.concat(err));
         setLoading(false);
       });
   };

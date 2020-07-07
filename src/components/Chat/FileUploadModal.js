@@ -26,7 +26,7 @@ const FileUploadModal = (props) => {
     authorizedTypes.includes(mime.lookup(filename));
 
   return (
-    <Modal basic open={props.modalOpen} onClose={props.closeModal}>
+    <Modal basic open={props.modal} onClose={props.closeModal}>
       <Modal.Header>Select an Image File</Modal.Header>
       <Modal.Content>
         <Input

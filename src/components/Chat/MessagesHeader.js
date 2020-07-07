@@ -8,7 +8,11 @@ const MessagesHeader = (props) => {
         <span>
           {props.channelName}
           {!props.isPrivateChannel && (
-            <Icon name={'star outline'} color="black" />
+            <Icon
+              name={props.isChannelStarred ? 'star' : 'star outline'}
+              color={props.isChannelStarred ? 'yellow' : 'black'}
+              onClick={props.handleStar}
+            />
           )}
         </span>
         <Header.Subheader>{props.uniquesUsersNo}</Header.Subheader>
