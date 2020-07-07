@@ -131,8 +131,10 @@ class UserPanel extends React.Component {
         <Grid.Column>
           <Grid.Row style={{ padding: '1.2em', margin: 0 }}>
             <Header inverted floated="left" as="h2">
-              <Icon name="code" />
-              <Header.Content>Racing Pigeons Chat</Header.Content>
+              <Icon className="chat_icon" name="code" />
+              <Header.Content className="chat_title">
+                Racing Pigeons Chat
+              </Header.Content>
             </Header>
 
             <Header style={{ padding: '0.25em' }} as="h4" inverted>

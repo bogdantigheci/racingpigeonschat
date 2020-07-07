@@ -39,7 +39,7 @@ const MetaPanel = (props) => {
       .slice(0, 5);
 
   return (
-    <Segment>
+    <Segment className="meta_panel">
       <Header as="h3" attached="top">
         About # {props.currentChannel && props.currentChannel.name}
       </Header>

@@ -1,7 +1,11 @@
 html,
-body,
+body {
+  height: 100%;
+  width: 100%;
+}
 .layout {
   height: 100vh;
+  width: 100vw;
   background: #fff;
   padding: 1em;
 }
@@ -14,7 +18,7 @@ body,
 .message_form {
   position: fixed !important;
   bottom: 1em;
-  margin-left: 320px !important;
+  margin-left: 250px !important;
   left: 0;
   right: 1em;
   z-index: 200;
@@ -163,6 +167,10 @@ body,
   right: 20px;
 }
 
+.side_panel {
+  font-size: 1.2rem !important;
+}
+
 @keyframes loadingFade {
   0% {
     opacity: 0;
@@ -172,5 +180,219 @@ body,
   }
   100% {
     opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .side_panel {
+    width: 120px !important;
+    font-size: 0.8rem !important;
+    left: -60px !important;
+  }
+  .search_input {
+    display: block;
+    left: 20px !important;
+  }
+  .chat_icon {
+    font-size: 1rem !important;
+  }
+  .meta_panel {
+    display: none;
+  }
+
+  .chat_title {
+    font-size: 1rem;
+  }
+
+  .chat_messages_header {
+    width: 245px;
+    left: 0 !important;
+    margin-top: -12px !important;
+  }
+  .chat_messages_header_title {
+    font-size: 1.3rem !important;
+    padding-left: 30px;
+  }
+
+  .chat_sidebar {
+    display: none !important;
+  }
+  .chat_messages_board {
+    width: 245px !important;
+    margin-top: -12px !important;
+  }
+
+  .messages {
+    height: 550px;
+    overflow-y: scroll;
+    width: 100%;
+  }
+
+  .message_form {
+    position: fixed !important;
+    bottom: 0;
+    margin-left: 0 !important;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    width: 96%;
+    height: 8rem;
+  }
+
+  .own_message {
+    border-left: 2px solid blue;
+    padding-left: 8px;
+    color: blue !important;
+  }
+
+  .message_image {
+    padding: 1em;
+  }
+
+  .progress_bar {
+    margin: 0.3em 0 0 0 !important;
+  }
+  .message_form_buttons{}
+
+
+  .menu {
+    padding-bottom: 2em;
+  }
+
+  .color_container {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    width: 35px;
+    border-radius: 3px;
+  }
+
+  .color_square {
+    width: 35px;
+    height: 35px;
+  }
+  .color_overlay {
+    width: 85px;
+    height: 35px;
+    transform: rotate(225deg);
+  }
+
+  .user_typing {
+    font-style: italic;
+    font-weight: bold;
+    margin-right: 3px;
+  }
+
+  .typing {
+    width: 5em;
+    height: 2em;
+    position: relative;
+    pad: 10px;
+    margin-left: 5px;
+    background: #e6e6e6;
+    border-radius: 20px;
+  }
+
+  .typing_dot {
+    float: left;
+    width: 8px;
+    height: 8px;
+    margin: 0 4px;
+    background: #8d8c91;
+    border-radius: 50%;
+    opacity: 0;
+    animation: loadingFade 1s infinite;
+  }
+
+  .typing_dot:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .typing_dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .typing_dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  .emojipicker {
+    position: absolute;
+  }
+
+  .messages_loading {
+    position: relative;
+    overflow: hidden;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+
+  .messages_loading::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    animation: sweep 2s infinite;
+    background-image: linear-gradient(
+      to left,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+  }
+
+  @keyframes sweep {
+    0% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(150%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .messages_loading_avatar {
+    height: 35px;
+    width: 35px;
+    border-radius: 3px;
+    background-color: rgba(58, 57, 57, 0.3);
+  }
+
+  .messages_loading_author {
+    background-color: rgba(58, 57, 57, 0.3);
+    width: 120px;
+    height: 10px;
+    border-radius: 3px;
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+    left: 40px;
+  }
+
+  .messages_loading_details {
+    background-color: rgba(58, 57, 57, 0.3);
+    height: 20px;
+    border-radius: 3px;
+    position: absolute;
+    bottom: 5px;
+    left: 40px;
+    right: 20px;
+  }
+
+  @keyframes loadingFade {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0;
+    }
   }
 }

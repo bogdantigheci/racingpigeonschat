@@ -8,11 +8,14 @@ import FavoriteChannel from './FavoriteChannel';
 const SidePanel = (props) => {
   return (
     <Menu
-      size="large"
+      size="small"
       inverted
       fixed="left"
       vertical
-      style={{ background: props.primaryColor, fontSize: '1.2rem' }}
+      style={{
+        background: props.primaryColor,
+      }}
+      className="side_panel"
     >
       <UserPanel
         currentUser={props.currentUser}

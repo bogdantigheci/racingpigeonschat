@@ -299,7 +299,7 @@ class Messages extends React.Component {
           isChannelStarred={isChannelStarred}
         />
 
-        <Segment>
+        <Segment className='chat_messages_board'>
           <Comment.Group className="messages">
             {this.displayMessagesLoading(messagesLoading)}
             {searchTerm

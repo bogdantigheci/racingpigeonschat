@@ -41,7 +41,6 @@ const ColorPanel = (props) => {
 
   const handleSaveColors = () => {
     if (primary && secondary) {
-     
       saveColors(primary, secondary);
     }
   };
@@ -91,6 +90,7 @@ const ColorPanel = (props) => {
       vertical
       visible
       width="very thin"
+      className='chat_sidebar'
     >
       <Divider />
       <Button icon="add" size="small" color="blue" onClick={openModal} />

@@ -3,9 +3,9 @@ import { Header, Segment, Input, Icon } from 'semantic-ui-react';
 
 const MessagesHeader = (props) => {
   return (
-    <Segment clearing>
+    <Segment clearing className="chat_messages_header">
       <Header fluid="true" as="h2" floated="left" style={{ marginBottom: 0 }}>
-        <span>
+        <span className="chat_messages_header_title">
           {props.channelName}
           {!props.isPrivateChannel && (
             <Icon
@@ -25,6 +25,7 @@ const MessagesHeader = (props) => {
           name="searchTerm"
           placeholder="Search messages"
           value={props.searchTerm}
+          className="search_input"
         />
       </Header>
     </Segment>
