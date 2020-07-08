@@ -22,7 +22,7 @@ const Message = ({ message, user }) => (
         <Image
           src={message.image}
           className="message__image"
-          style={{ height: 300, width: 300 }}
+          style={{ maxHeight: 300, maxWidth: 300 }}
         />
       ) : (
         <Comment.Text>{message.content}</Comment.Text>

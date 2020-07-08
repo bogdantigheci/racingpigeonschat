@@ -299,9 +299,11 @@ class Messages extends React.Component {
           isChannelStarred={isChannelStarred}
         />
 
-        <Segment className='chat_messages_board'>
+        <Segment className="chat_messages_board">
           <Comment.Group className="messages">
-            {this.displayMessagesLoading(messagesLoading)}
+            {messages.length > 0
+              ? this.displayMessagesLoading(messagesLoading)
+              : this.displayMessagesLoading(false)}
             {searchTerm
               ? this.displayMessages(searchResults)
               : this.displayMessages(messages)}
