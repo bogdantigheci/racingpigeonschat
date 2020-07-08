@@ -25,7 +25,7 @@ const Chat = (props) => {
         primaryColor={_.get(props.colors, 'primaryColor')}
         currentUser={_.get(props.user, 'currentUser')}
       />
-      <Grid.Column style={{ marginLeft: window.innerWidth > 768 ? 235 : 110 }}>
+      <Grid.Column style={{ marginLeft: window.innerWidth > 768 ? 245 : 110 }}>
         <Messages
           key={_.get(props.channel, 'currentChannel.id')}
           currentChannel={_.get(props.channel, 'currentChannel')}
