@@ -191,7 +191,7 @@ body {
   }
   .search_input {
     display: block;
-    left: 20px !important;
+    left: 0 !important;
   }
   .chat_icon {
     font-size: 1rem !important;
@@ -205,21 +205,22 @@ body {
   }
 
   .chat_messages_header {
-    width: 245px;
+    width: 285px;
     left: 0 !important;
     margin-top: -12px !important;
   }
   .chat_messages_header_title {
     font-size: 1.3rem !important;
-    padding-left: 30px;
+    padding-left: 50px;
   }
 
   .chat_sidebar {
     display: none !important;
   }
   .chat_messages_board {
-    width: 245px !important;
+    width: 285px !important;
     margin-top: -12px !important;
+    height: 90%;
   }
 
   .messages {
@@ -252,8 +253,6 @@ body {
   .progress_bar {
     margin: 0.3em 0 0 0 !important;
   }
-  .message_form_buttons{}
-
 
   .menu {
     padding-bottom: 2em;
