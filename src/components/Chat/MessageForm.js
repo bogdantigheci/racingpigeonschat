@@ -207,10 +207,16 @@ class MessageForm extends React.Component {
     } = this.state;
 
     return (
-      <Segment className="message_form">
+      <Segment
+        className={
+          !emojiPicker && window.innerWidth < 768
+            ? 'message_form'
+            : 'message_form show_emoji_on_mobile'
+        }
+      >
         {emojiPicker && (
           <Picker
-            set="apple"
+            set="facebook"
             onSelect={this.handleAddEmoji}
             className="emojipicker"
             title="Pick your emoji"

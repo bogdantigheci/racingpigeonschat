@@ -200,6 +200,10 @@ body {
     display: none;
   }
 
+  .user_panel_options {
+    font-size: 0.8rem !important;
+  }
+
   .chat_title {
     font-size: 1rem;
   }
@@ -315,15 +319,14 @@ body {
     animation-delay: 0.4s;
   }
 
-  .emojipicker {
-    position: absolute;
-  }
-
   .messages_loading {
     position: relative;
     overflow: hidden;
     height: 40px;
     margin-bottom: 10px;
+  }
+  .show_emoji_on_mobile {
+    margin-bottom: 420px !important;
   }
 
   .messages_loading::after {

@@ -137,7 +137,12 @@ class UserPanel extends React.Component {
               </Header.Content>
             </Header>
 
-            <Header style={{ padding: '0.25em' }} as="h4" inverted>
+            <Header
+              style={{ padding: '0.25em' }}
+              as="h4"
+              inverted
+              className="user_panel_options"
+            >
               <Dropdown
                 trigger={
                   user && (
